@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db82eb60-63b1-4d4d-bbbb-8c5b96342577" name="Changes" comment="" />
+    <list default="true" id="db82eb60-63b1-4d4d-bbbb-8c5b96342577" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +41,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SearchEverywhere.PersistedScope.FileSearchEverywhereContributor": "All Places",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "develop",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.jshint": "true",
     "node.js.detected.package.tslint": "true",
@@ -63,7 +67,8 @@
       <option name="presentableId" value="Default" />
       <updated>1790403009660</updated>
       <workItem from="1790403012447" duration="3248000" />
-      <workItem from="1790414448631" duration="1835000" />
+      <workItem from="1790414448631" duration="3774000" />
+      <workItem from="1790498935238" duration="614000" />
     </task>
     <servers />
   </component>
