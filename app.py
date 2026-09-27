@@ -1,40 +1,53 @@
 import streamlit as st
 import pandas as pd
 import duckdb
+import io
 
 st.write("""
 # SQL SRS
 Spaced repetition System SQL practice
 """)
 
-option = st.selectbox(
-    "What would you like to review?",
-    ("Joins", "Group by","Windows Functions"),
-    index=None,
-    placeholder="Select contact method ...",
-)
+csv = '''
+beverage, price
+orange juce,2.5
+Expresso,2
+Tea, 3
+'''
 
-st.write('You selected', option)
+beverages = pd.read_csv(io.StringIO(csv))
 
+csv2 = '''
+food_item, food_price
+cookie juice,2.5
+chocolatine,2
+muffin,3
+'''
 
-data = {"a":[1, 2, 3], "b":[4, 5, 6]}
-df = pd.DataFrame(data)
+food_items = pd.read_csv(io.StringIO(csv2))
 
-tab1, tab2, tab3 = st.tabs(["Cat",'Dog','Owl'])
+answer = '''
+SELECT * FROM beverages
+CROSS JOIN food_items
+'''
 
-with tab1:
-    st.header('Cat')
-    query_text = st.text_area(label="Enter SQL command")
-    st.dataframe(df)
-    st.write(f'Your query was {query_text}')
-    db2=duckdb.query(query_text)
-    st.dataframe(db2)
-    st.image('https://static.streamlit.io/examples/cat.jpg')
+solution = duckdb.sql(answer).df()
+
+st.header("enter your code:")
+query = st.text_area(label="votre code sql ici", key="user_input")
+if query:
+    result = duckdb.sql(query).df()
+    st.dataframe(result)
+
+tab2, tab3 = st.tabs(["Exercice",'Reply'])
 
 with tab2:
-    st.header('Dog')
-    st.image('https://static.streamlit.io/examples/dog.jpg')
+    st.write("table: beverages")
+    st.dataframe(beverages)
+    st.write("table: food_items")
+    st.dataframe(food_items)
+    st.write("expected: ")
+    st.dataframe(solution)
 
 with tab3:
-    st.header('Owl')
-    st.image('https://static.streamlit.io/examples/owl.jpg')
+    st.write(answer)
